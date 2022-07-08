@@ -25,7 +25,21 @@ public class LinkedList<E> implements List<E> {
 
     @Override
     public void remove(int index) {
+        Node nextNode;
+        Node prevNode;
+        if (index == 0) {
+            nextNode = findByIndex(index + 1);
+            head = nextNode;
+        } else if (index == size - 1) {
+            prevNode = findByIndex(index - 1);
+            tail = prevNode;
+        } else {
+            prevNode = findByIndex(index - 1);
+            nextNode = findByIndex(index + 1);
 
+            prevNode.next = nextNode;
+        }
+        size--;
     }
 
     @Override
@@ -40,11 +54,19 @@ public class LinkedList<E> implements List<E> {
 
     @Override
     public E get(int index) {
-        return null;
+        return findByIndex(index).value;
+    }
+
+    private Node findByIndex(int index) {
+        Node target = head;
+        for (int i = 1; i <= index; i++) {
+            target = target.next;
+        }
+
+        return target;
     }
 
     private class Node {
-        int index;
         E value;
         Node next;
     }
