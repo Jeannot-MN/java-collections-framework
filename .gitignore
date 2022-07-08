@@ -1,0 +1,14 @@
+# Created by .ignore support plugin (hsz.mobi)
+.idea
+*.iml
+target
+generated
+*.log
+/modules/business-api/data/
+/data/
+/modules/config-server/config_checkout
+/modules/config-server/logs
+config_checkout
+logs
+/modules/config-server/config_checkout/
+/modules/interface-api/integration-test/C:/
