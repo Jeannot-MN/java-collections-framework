@@ -7,7 +7,7 @@ public class LinkedListTest {
 
     @Test
     public void testAdding() {
-        List<String> list = new LinkedList();
+        List<String> list = new LinkedList<>();
         list.add("Brandon");
         list.add("Ruan");
         list.add("Divhani");
